@@ -2,17 +2,18 @@ from display import *
 from matrix import *
 
 
-def draw_lines( matrix, screen, color ):
-    pass
+def draw_lines( matrix, s, c):
+    for i in range(int(len(matrix) /2)):
+        p1 = matrix[2*i]
+        p2 = matrix[2*i + 1]
+        draw_line(p1[0], p1[1], p2[0], p2[1], s, c)
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
-    pass
+    matrix.append([x0,y0,z0,1])
+    matrix.append([x1,y1,z1,1])
 
 def add_point( matrix, x, y, z=0 ):
-    pass
-
-
-
+    matrix.append([x,y,z,1])
 
 def draw_line( x0, y0, x1, y1, screen, color ):
 
@@ -34,7 +35,7 @@ def draw_line( x0, y0, x1, y1, screen, color ):
     if ( abs(x1-x0) >= abs(y1 - y0) ):
 
         #octant 1
-        if A > 0:            
+        if A > 0:
             d = A + B/2
 
             while x < x1:
