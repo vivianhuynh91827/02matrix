@@ -15,7 +15,7 @@ def print_matrix( matrix ):
     s = ""
     for i in range(4):
         for point in matrix:
-            s = s + point[i] + " "
+            s = s + str(point[i]) + " "
         s = s + "\n"
     print(s)
 
