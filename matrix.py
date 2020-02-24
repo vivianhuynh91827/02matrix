@@ -15,7 +15,7 @@ def print_matrix( matrix ):
     s = ""
     for i in range(4):
         for point in matrix:
-            s = s + str(point[i]) + " "
+            s = s + str(float(point[i])) + " "
         s = s + "\n"
     print(s)
 
@@ -24,7 +24,7 @@ def print_matrix( matrix ):
 def ident( matrix ):
     side = len(matrix)
     for i in range(side):
-        matrix[i][i] = 1
+        matrix[i][i] = 1.000
     for r in range(side):
         for c in range(side):
             if r !=c :
@@ -40,8 +40,8 @@ def multi_helper(m1, m2 ):
     final = []
     for i in range(len(m1)):
         sum = 0
-        for c in range(len(m1[i])):
-            sum = sum + (m1[i][c] * m2[c])
+        for c in range(len(m1[0])):
+            sum = sum + (m1[c][i] * m2[c])
         final.append(sum)
     return final
 
